@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
+    "registry":"https://npm.pkg.github.com/rausdi"
   },
   "repository": "git://github.com/rausdi/design-system.git",
   "dependencies": {
