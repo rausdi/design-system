@@ -1,9 +1,9 @@
 {
   "name": "@rausdi/design-system",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": false,
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/rausdi"
+    "registry":"https://npm.pkg.github.com/@rausdi"
   },
   "repository": "git://github.com/rausdi/design-system.git",
   "dependencies": {
