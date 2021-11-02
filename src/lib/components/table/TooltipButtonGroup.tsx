@@ -23,7 +23,7 @@ const TooltipButtonGroup: React.FC<TooltipButtonGroupProps> = (
 ) => {
   const { cellContent } = props;
   const { sortAscFunc, sortDescFunc } = cellContent;
-  const sortButtonGroupRef = React.createRef();
+  const sortButtonGroupRef: React.RefObject<HTMLDivElement> = React.createRef();
   return (
     <TooltipButtonGroupRoot>
       {(sortAscFunc || sortDescFunc) && (
@@ -31,7 +31,10 @@ const TooltipButtonGroup: React.FC<TooltipButtonGroupProps> = (
           <Button
             text={"Сортировать"}
             onClick={() => {
-              Tooltip.show(sortButtonGroupRef.current);
+              if (sortButtonGroupRef.current) {
+                const tooltip: Element = sortButtonGroupRef.current;
+                Tooltip.show(tooltip);
+              }
             }}
             leftIcon={Sort}
             rightIcon={Arrow}

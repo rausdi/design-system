@@ -3,7 +3,7 @@ import Text, { TextSizesType } from "../../Text";
 
 export interface CriticalityProps {
   text: string;
-  color: string;
+  color: string | undefined;
 }
 
 const CriticalityStyled = styled.div`

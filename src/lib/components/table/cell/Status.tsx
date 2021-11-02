@@ -3,7 +3,7 @@ import Text, { TextSizesType } from "../../Text";
 
 export interface StatusProps {
   text: string;
-  color: string;
+  color: string | undefined;
 }
 
 const StatusStyled = styled.div`

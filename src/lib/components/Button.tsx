@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import styled from "styled-components";
 import Text, { TextSizesType } from "./Text";
+import { SVGBaseType } from "./icons/SVGBase";
 
 const ButtonRoot = styled.div`
   display: flex;
@@ -46,8 +47,8 @@ const TextStyled = styled(Text)`
 interface ButtonProps {
   text?: string;
   onClick: MouseEventHandler;
-  leftIcon?: string | FunctionComponent | ComponentClass;
-  rightIcon?: string | FunctionComponent | ComponentClass;
+  leftIcon?: (props: SVGBaseType) => JSX.Element;
+  rightIcon?: (props: SVGBaseType) => JSX.Element;
 }
 
 class Button extends Component<ButtonProps, any> {

@@ -3,6 +3,12 @@ import styled, { css } from "styled-components";
 
 export interface TooltipProps extends ReactTooltipProps {}
 
+export interface TooltipType extends React.FC<TooltipProps> {
+  rebuild: () => void;
+  hide: (target?: Element | null) => void;
+  show: (target: Element) => void;
+}
+
 const TooltipRoot = styled(ReactTooltip)`
   padding: 0 !important;
   margin: 0 !important;
@@ -18,13 +24,17 @@ const TooltipRoot = styled(ReactTooltip)`
   }
 `;
 
-const Tooltip: React.FC<TooltipProps> = (props: TooltipProps) => {
+const Tooltip: TooltipType = (props: TooltipProps) => {
   const { children, ...restProps } = props;
   return <TooltipRoot {...restProps}>{children}</TooltipRoot>;
 };
 
 Tooltip.rebuild = ReactTooltip.rebuild;
-Tooltip.hide = ReactTooltip.hide;
-Tooltip.show = ReactTooltip.show;
+Tooltip.hide = (target) => {
+  ReactTooltip.hide(target || undefined);
+};
+Tooltip.show = (target) => {
+  ReactTooltip.show(target);
+};
 
 export default Tooltip;

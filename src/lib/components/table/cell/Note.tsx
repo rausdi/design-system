@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export interface NoteProps {
   defaultText: string;
-  onChange: ContentOnChangeFuncType;
+  onChange: ContentOnChangeFuncType | undefined;
 }
 
 const NoteStyled = styled.div`
